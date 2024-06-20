@@ -1,0 +1,29 @@
+site_name: Documentação Projeto Web Scrapping IBM
+language: pt_BR
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+  toggle:
+    icon: material/weather-sunny
+    name: Modo Claro
+    dark:
+      icon: material/weather-night
+      name: Modo Escuro
+plugins:
+  - search  # Plugin que possibilita buscas pela documentação
+  - mkdocstrings:  # Esse que faz a mágica, mais informações abaixo
+      handlers:
+        python:
+          setup_commands:
+            - import sys
+            - sys.path.append("src")
+      watch:
+        - src
