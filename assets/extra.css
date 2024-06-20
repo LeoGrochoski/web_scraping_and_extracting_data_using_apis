@@ -1,0 +1,21 @@
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode a {
+    color: #bb86fc;
+}
+
+body.dark-mode .md-nav__link {
+    color: #bb86fc;
+}
+
+body.dark-mode .md-typeset h1,
+body.dark-mode .md-typeset h2,
+body.dark-mode .md-typeset h3,
+body.dark-mode .md-typeset h4,
+body.dark-mode .md-typeset h5,
+body.dark-mode .md-typeset h6 {
+    color: #ffffff;
+}
