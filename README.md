@@ -38,6 +38,12 @@ cd src
 
 python webscrapping_movies.py
 ```
+
+5. Para verificar funcionamento do banco utilizando select 
+```bash
+cd sql
+python query1.py
+```
  
 
 ## Documentação completa
