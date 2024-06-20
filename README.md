@@ -1,4 +1,4 @@
-![img](.\img\webscrapping-ibm.png)
+![Imagem](.\img\webscrapping-ibm.png)
 
 ## Objetivo
 
