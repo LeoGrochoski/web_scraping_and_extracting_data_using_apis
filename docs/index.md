@@ -7,13 +7,15 @@ O uso de web scraping, entretanto, requer algum conhecimento básico da estrutur
 ## Dados
 
 
-
 ## Funções
 
 load_webpage()
 ::: src.webscrapping_movies.load_webpage
 find_tables()
 ::: src.webscrapping_movies.find_tables
+transform_data()
+::: src.webscrapping_movies.transform_data
+
 
 
 

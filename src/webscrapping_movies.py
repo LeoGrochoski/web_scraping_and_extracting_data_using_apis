@@ -9,9 +9,10 @@ from pandas import DataFrame
 url: str = 'https://web.archive.org/web/20230902185655/https://en.everybodywiki.com/100_Most_Highly-Ranked_Films'
 db_name: str = 'Movies.db'
 table_name: str = 'Top_50'
-csv_path: str = '/C:/Lab/web_scraping_and_extracting_data_using_apis/data/top_50_films.csv'
+csv_path: str = '../data/top_50_filmes.csv'
+nome_csv = 'top_50_filmes.csv'
 
-def load_webpage(url: str):
+def load_webpage(url: str) -> str:
     """
     Função para carregar a pagina da web deseja para realizar o web scrapping
 
@@ -29,7 +30,7 @@ def load_webpage(url: str):
     data: str = BeautifulSoup(site, 'html.parser')
     return data
 
-def find_tables(data: str):
+def find_tables(data: str) -> str:
     """
     Função para receber o HTML iterar sobre os dados e retornar um dataframe das colunas e linhas desejadas
     
@@ -55,7 +56,7 @@ def find_tables(data: str):
     Returns:
         df (str): Retorna um dataframe contendo os 50 primeiros filmes com seu rank medio, nome e ano de lançamento.
     """
-    df: DataFrame = pd.DataFrame(columns=["Average Rank","Film","Year"])
+    df: DataFrame = pd.DataFrame(columns=["Rank Médio","Filme","Ano"])
     count: int = 0
     tables = data.find_all('tbody')
     rows = tables[0].find_all('tr')
@@ -63,9 +64,9 @@ def find_tables(data: str):
         if count<50:
             col = row.find_all('td')
             if len(col)!=0:
-                data_dict: dict = {"Average Rank": col[0].contents[0],
-                            "Film": col[1].contents[0],
-                            "Year": col[2].contents[0]}
+                data_dict: dict = {"Rank Médio": col[0].contents[0],
+                            "Filme": col[1].contents[0],
+                            "Ano": col[2].contents[0]}
                 df1: DataFrame = pd.DataFrame(data_dict, index=[0])
                 df: DataFrame = pd.concat([df,df1], ignore_index=True)
                 count+=1
@@ -73,13 +74,17 @@ def find_tables(data: str):
             break
     return df 
 
+def transform_data(df: DataFrame) -> pd.DataFrame:
+    """
+    Função para transformação dos dados de DataFrame para CSV
+
+    Args: É passado o dataframe gerado anteriormente
+
+    Returns: Retorna um arquivo .csv salvo no diretorio data. 
+    """
+    df.to_csv(csv_path)
 
 dados = load_webpage(url)
 tabela_dados = find_tables(dados)
-
-# Convertendo DataFrame para HTML para incluir na documentação
-df_html: str = tabela_dados.to_html(index=False)
-
-# Salvando HTML em um arquivo
-with open('docs/dataframe.html', 'w', encoding='utf-8') as f:
-    f.write(df_html)
+csv_dados = transform_data(tabela_dados)
+print(csv_dados)
