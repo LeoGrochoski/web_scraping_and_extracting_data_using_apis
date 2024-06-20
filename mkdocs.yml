@@ -1,29 +1,22 @@
-site_name: Documentação Projeto Web Scrapping IBM
-language: pt_BR
+site_name: Projeto IBM - Web Scraping e Extração de Dados usando APIs
 theme:
   name: material
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: indigo
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: indigo
-  toggle:
-    icon: material/weather-sunny
-    name: Modo Claro
-    dark:
-      icon: material/weather-night
-      name: Modo Escuro
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: indigo
+    accent: indigo
+    background: "#1e3a5f"  # Fundo azul escuro
+    surface: "#23395b"  # Superfície azul médio      on-primary: "#ffffff"  # Texto branco
+    on-accent: "#ffffff"  # Texto branco
+    on-background: "#ffffff"  # Texto branco
+    on-surface: "#ffffff"  # Texto branco
 plugins:
-  - search  # Plugin que possibilita buscas pela documentação
-  - mkdocstrings:  # Esse que faz a mágica, mais informações abaixo
-      handlers:
-        python:
-          setup_commands:
-            - import sys
-            - sys.path.append("src")
-      watch:
-        - src
+  - search
+  - mkdocstrings:
+      default_handler: python  
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true

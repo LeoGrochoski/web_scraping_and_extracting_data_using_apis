@@ -1,4 +1,4 @@
-# Web Scrapin E Extração de Dados usando APISs
+![img](.\img\webscrapping-ibm.png)
 
 ## Objetivo
 

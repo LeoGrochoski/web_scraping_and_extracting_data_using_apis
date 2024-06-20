@@ -4,16 +4,16 @@ Web scraping é usado para extração de dados relevantes de páginas da web. Se
 
 O uso de web scraping, entretanto, requer algum conhecimento básico da estrutura das páginas HTML. Neste projeto, demonstrarei o processo de análise do código HTML de uma página da web e como extrair as informações necessárias dela usando web scraping em Python.
 
-## Commands
+## Dados
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Funções
+
+load_webpage()
+::: src.webscrapping_movies.load_webpage
+find_tables()
+::: src.webscrapping_movies.find_tables
+
+
+

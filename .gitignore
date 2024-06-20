@@ -1,2 +1,10 @@
+
+# Ambiente virtual e bibliotecas
 .venv
+
+# Imagem da versão do python
 .python-version
+
+# Pasta com imagem da do titulo do projeto
+img
+
