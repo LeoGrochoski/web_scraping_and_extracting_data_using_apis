@@ -48,5 +48,6 @@ python query1.py
 
 ## Documentação completa
 
-
+Para verificar a documentação detalhada do código e seu funcionamento
+acessar [clique aqui](https://leogrochoski.github.io/web_scraping_and_extracting_data_using_apis/)
 
